@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HazelNut Room Entrance</title>
+  <title>HazelNut Room</title>
   <style>
     * {
       margin: 0;
@@ -15,34 +15,21 @@
       height: 100%;
       overflow: hidden;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: black;
     }
-    .intro-screen, .container {
+    .screen {
       position: absolute;
       width: 100vw;
       height: 100vh;
       top: 0;
       left: 0;
     }
-    .intro-screen {
+    #intro {
       background: url('door.jpg') center center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background-color: black;
-      z-index: 10;
       cursor: pointer;
+      z-index: 10;
     }
-    .intro-screen h1 {
-      color: white;
-      font-size: 3rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-      margin-bottom: 20px;
-      background-color: rgba(0,0,0,0.5);
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
-    .container {
+    #room {
       display: none;
     }
     .background-image {
@@ -70,13 +57,14 @@
   </style>
 </head>
 <body>
-  <div class="intro-screen" id="intro" onclick="enterRoom()">
-    <h1>여긴 HazelNut 방이다.</h1>
+  <!-- Door screen -->
+  <div class="screen" id="intro" onclick="enterRoom()">
     <audio id="knock-sound" src="knock.mp3" preload="auto"></audio>
   </div>
 
-  <div class="container" id="room">
-    <img src="5b975b8844c4ff014abc5c8155834396eb9a1ad6c438deadc671d20761fee0a4.jpg" alt="Ghibli Room" class="background-image" />
+  <!-- HazelNut room screen -->
+  <div class="screen" id="room">
+    <img src="5b975b8844c4ff014abc5c8155834396eb9a1ad6c438deadc671d20761fee0a4.jpg" alt="HazelNut Room" class="background-image" />
     <a href="https://your-link-for-guitar.com" class="hotspot guitar"></a>
     <a href="https://your-link-for-trashcan.com" class="hotspot trashcan"></a>
   </div>
@@ -88,7 +76,7 @@
       setTimeout(() => {
         document.getElementById('intro').style.display = 'none';
         document.getElementById('room').style.display = 'block';
-      }, 1200); // wait for knock sound before entering
+      }, 1200); // wait for knock sound before showing the room
     }
   </script>
 </body>
