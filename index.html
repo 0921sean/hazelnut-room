@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Ghibli-style Room</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hotspot {
+      position: absolute;
+      cursor: pointer;
+    }
+    .guitar {
+      top: 43%; /* adjust these values based on image size */
+      left: 78%;
+      width: 7%;
+      height: 35%;
+    }
+    .trashcan {
+      top: 68%;
+      left: 82.5%;
+      width: 6%;
+      height: 18%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="room_picture.jpg" alt="Hazelnut Room" class="background-image" />
+    <a href="https://your-link-for-guitar.com" class="hotspot guitar"></a>
+    <a href="https://your-link-for-trashcan.com" class="hotspot trashcan"></a>
+  </div>
+</body>
+</html>
